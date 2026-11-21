@@ -1,0 +1,25 @@
+vendor,layer,period,doc_id,role,term,sentence
+AN,general,2023H1,AN-2023H1-console-being-explicit,current,new hire,"For example, if you want Claude to respond to customer emails, you can give guidance on the appropriate tone, just as you would to a new hire."
+AN,general,2023H2,AN-2023H2-old-constructing-a-prompt,current,intern,Think of Claude as similar to an intern on their first day on the job.
+AN,general,2024H1,AN-2024H1-old-constructing-a-prompt,retired,intern,Think of Claude as similar to an intern on their first day on the job.
+AN,general,2024H1,AN-2024H1-pe-be-clear-and-direct,current,employee,"When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions."
+AN,general,2024H1,AN-2024H1-pe-be-clear-and-direct,current,colleague,"Show your prompt to a colleague, ideally someone who has minimal context on the task, and ask them to follow the instructions."
+AN,general,2024H2,AN-2024H2-pe-be-clear-and-direct,current,employee,"When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions."
+AN,general,2024H2,AN-2024H2-pe-be-clear-and-direct,current,colleague,"Show your prompt to a colleague, ideally someone who has minimal context on the task, and ask them to follow the instructions."
+AN,general,2025H1,AN-2025H1-pe-be-clear-and-direct,current,employee,"When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions."
+AN,general,2025H1,AN-2025H1-pe-be-clear-and-direct,current,colleague,"Show your prompt to a colleague, ideally someone who has minimal context on the task, and ask them to follow the instructions."
+AN,general,2025H2,AN-2025H2-pe-be-clear-and-direct,current,employee,"When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions."
+AN,general,2025H2,AN-2025H2-pe-be-clear-and-direct,current,colleague,"Show your prompt to a colleague, ideally someone who has minimal context on the task, and ask them to follow the instructions."
+AN,general,2026H1,AN-2026H1-pe-be-clear-and-direct,retired,employee,"When interacting with Claude, think of it as a brilliant but very new employee (with amnesia) who needs explicit instructions."
+AN,general,2026H1,AN-2026H1-pe-be-clear-and-direct,retired,colleague,"Show your prompt to a colleague, ideally someone who has minimal context on the task, and ask them to follow the instructions."
+AN,general,2026H1,AN-2026H1-pe-best-practices,current,employee,Think of Claude as a brilliant but new employee who lacks context on your norms and workflows.
+AN,general,2026H1,AN-2026H1-pe-best-practices,current,colleague,Golden rule:** Show your prompt to a colleague with minimal context on the task and ask them to follow it.
+AN,general,2026H2,AN-2026H2-pe-best-practices,current,employee,Think of Claude as a brilliant but new employee who lacks context on your norms and workflows.
+AN,general,2026H2,AN-2026H2-pe-best-practices,current,colleague,Key test:** Show your prompt to a colleague with minimal context on the task and ask them to follow it.
+AN,model,2026H2,AN-2026H2-pe-prompting-claude-fable-5-2,current,colleague,"With that rule, the model held back roughly half of its routine requests to colleagues and other teams."
+OA,general,2025H2,OA-2025H2-prompt-engineering-guide,current,co-worker,A reasoning model is like a senior co-worker.
+OA,general,2025H2,OA-2025H2-prompt-engineering-guide,current,coworker,A GPT model is like a junior coworker.
+OA,general,2026H1,OA-2026H1-prompt-engineering-guide,current,co-worker,A reasoning model is like a senior co-worker.
+OA,general,2026H1,OA-2026H1-prompt-engineering-guide,current,coworker,A GPT model is like a junior coworker.
+OA,general,2026H2,OA-2026H2-prompt-engineering-guide,current,co-worker,A reasoning model is like a senior co-worker.
+OA,general,2026H2,OA-2026H2-prompt-engineering-guide,current,coworker,A GPT model is like a junior coworker.

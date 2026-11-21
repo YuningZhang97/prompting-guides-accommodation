@@ -1,0 +1,4 @@
+vendor,model,release_date,source,note
+OA,o1-preview,2024-09-12,https://openai.com/index/introducing-openai-o1-preview/,OpenAI announcement
+AN,Claude 3.7 Sonnet (extended thinking),2025-02-24,https://www.anthropic.com/news/claude-3-7-sonnet,Anthropic announcement: first hybrid reasoning model
+GG,Gemini 2.0 Flash Thinking Experimental,2024-12-19,https://aistudio.google.com/docs/changelog,"Gemini API changelog, December 19, 2024: Gemini 2.0 Flash Thinking released for public preview"

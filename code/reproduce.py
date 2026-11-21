@@ -237,12 +237,11 @@ def table1() -> list[str]:
         "withdrawals coded by both coders")
     md = ["**Table 1.** Intercoder reliability (two coders).\n",
           "| Judgment | Units | *n* | Krippendorff's α | 95% CI | Agreement |", "|---|---|---|---|---|---|", *rows, "",
-          f"*Note.* Nominal α. 95% CIs are percentile intervals from {BOOT} bootstrap resamples of units (seed {BOOT_SEED}). "
-          "Segmentation was tested on three documents not used in coder training. Type and stance were double-coded on a "
-          "20% sample of recommendations stratified by vendor, with candidate machine-specific accommodations oversampled; "
-          "recommendations either coder judged out of scope are excluded. A third form of withdrawal, walk-back (a rewritten "
-          f"recommendation that softens its earlier claim), was double-coded but is not analyzed because reliability was low "
-          f"(α = {wb[0]:.2f}, 95% CI [{wb[1]:.2f}, {wb[2]:.2f}], n = {wb[3]})."]
+          f"*Note.* Nominal α. 95% CIs are percentile intervals from {BOOT:,} bootstrap resamples. "
+          "Segmentation was tested on three documents not used in coder training. The sample for type and stance oversampled "
+          "candidate machine-specific accommodations and excludes recommendations that either coder judged out of scope. "
+          "Walk-backs, rewritten recommendations that soften an earlier claim, were also double-coded but are not analyzed "
+          f"because reliability was low (α = {f'{wb[0]:.2f}'.lstrip('0')})."]
     (OUT / "table1.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return md
 

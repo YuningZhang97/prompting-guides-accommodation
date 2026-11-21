@@ -188,8 +188,8 @@ def shares_and_figure(t: dict) -> None:
     import matplotlib.pyplot as plt
     colors, markers = {"OA": "#2a78d6", "AN": "#eb6834", "GG": "#1baf7a"}, {"OA": "o", "AN": "s", "GG": "^"}
     tl = {r["vendor"]: r for r in read("reasoning_models.csv")}
-    # drawn at its printed size (6.5 in = text width) so the 11-pt labels match the table text in the paper
-    plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
+    # drawn at its printed size (6.5 in = text width) so the labels match the table text (\\small at 12 pt = 10.95 pt) in the paper
+    plt.rcParams.update({"font.size": 10.95, "axes.spines.top": False, "axes.spines.right": False})
     use_paper_font(plt)
     fig, ax = plt.subplots(figsize=(6.5, 3.0), dpi=200)
     for v in VENDORS:

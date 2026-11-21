@@ -202,7 +202,7 @@ def shares_and_figure(t: dict) -> None:
               + [plt.Line2D([], [], ls="none", marker="o", mfc="white", mec=colors["OA"], mew=2),
                  plt.Line2D([], [], color="#777777", ls=":", lw=1)],
               [NAMES[v] for v in VENDORS] + ["OpenAI 2024H2 (repository copy)", "first reasoning model"],
-              frameon=False, fontsize=8, loc="upper left")
+              frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=3)
     fig.tight_layout()
     for ext in ("png", "pdf"):
         fig.savefig(OUT / f"figure1.{ext}")

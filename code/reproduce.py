@@ -279,18 +279,10 @@ def table2(ws: list[dict]) -> dict:
     pct = lambda k, n: f"{k} ({k / n:.0%})"
     ex_a, ex_c = rows[0][1] / rows[-1][1], rows[0][2] / rows[-1][2]
     r = rates_ever_taught()
-    walk_backs = sum(w["walk_back"] == "yes" and CODES[w["unit_id"]]["stance"] == "do" and CAT[w["unit_id"]] in AC
-                     for w in read("withdrawals.csv"))
     md = ["**Table 2.** Withdrawals of recommendations, by form and type.\n",
           "| Form of withdrawal | *n* | Machine-specific accommodation | General communication |", "|---|---|---|---|"]
     md += [f"| {n} | {a + c} | {pct(a, a + c)} | {pct(c, a + c)} |" for n, a, c in rows]
-    md += ["", "*Note.* All three vendors, general and model guides. \"Page taken down or merged\": the page carrying the "
-               "recommendation had no current version in the period of removal. Of recommendations that a current guide "
-               "presented as advice to follow, "
-               f"{r['A'][0] / r['A'][1]:.1%} of machine-specific accommodation and {r['C'][0] / r['C'][1]:.1%} of general "
-               f"communication were later removed without notice. Of withdrawn machine-specific accommodation, {ex_a:.0%} was "
-               f"explicitly retracted, compared with {ex_c:.0%} of withdrawn general communication. Walk-backs ({walk_backs} by "
-               "the first coder) are excluded because of low reliability."]
+    md += ["", "*Note.* All three vendors, general and model guides. \"Page taken down or merged\": the page carrying the recommendation had no current version in the period of removal."]
     (OUT / "table2.md").write_text("\n".join(md) + "\n", encoding="utf-8")
     return {"rows": rows, "ex_a": ex_a, "ex_c": ex_c, "rates": r}
 

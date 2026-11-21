@@ -20,7 +20,7 @@ Where each number and quotation in the paper comes from. All result files are wr
 | 4.2 | Most withdrawals came from Anthropic (41 of 48) | `numbers.md` › 4.2 | `withdrawals()` | as above |
 | 4.2 | All retractions concerned thinking instructions or emphasis; persona only removed | `numbers.md` › 4.2 (by form) | `withdrawals()` | as above |
 | 4.2 | More than a third gave no reason (10 of 27); unsupported and ineffective most common (5 each) | `numbers.md` › 4.2 (reasons) | `withdrawals()` | `withdrawals.csv` (`reason`) |
-| Table 2 note | 25.6% vs 14.2% later removed without notice | `table2.md` note; `numbers.md` › Table 2 note | `rates_ever_taught()` | `occurrences.csv`, `units.csv` |
+| Not reported in the paper | Additional result: 25.6% vs 14.2% later removed without notice | `numbers.md` › Table 2 note | `rates_ever_taught()` | `occurrences.csv`, `units.csv` |
 | 4.3; Table 3 | Anthropic's employee descriptions; OpenAI's senior and junior coworker | `table3.md` | `table3()` | `colleague_sentences.csv` |
 | 4.3 | Model-specific advice in 2026H2: OpenAI 71%, Google 32%, Anthropic 12%; almost none before 2025 | `numbers.md` › 4.3 | `model_specific_share()` | `units.csv` (`model_scope`), `occurrences.csv` |
 | 1; 4.2 | Prefill quotations ("a few prefilled sentences…", "are no longer supported", "should be sufficient") | — | — | `units.csv` (`text`) |

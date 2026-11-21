@@ -10,7 +10,7 @@ This folder contains the data and code behind every number, table and figure in 
 |---|---|
 | `data/` | The coded dataset (CSV, English) |
 | `code/reproduce.py` | One script that recomputes all results |
-| `results/` | Output of the script: Figure 1, Tables 1–3, and the other numbers cited in the text |
+| `results/` | Output of the script: Figure 1, Tables 1–3, robustness checks, and the other numbers cited in the text |
 | `PAPER_MAP.md` | Where each claim in the paper comes from: result file, code and data |
 | `codebook.md` | How each recommendation was coded |
 | `segmentation_rules.md` | How the guides were collected and divided into recommendations |

@@ -22,6 +22,21 @@ Counts behind the different paths (general guides):
 - Google 2023H2 -> 2026H2: machine-specific 5 -> 7; general communication 2025H1 -> 2025H2: 17 -> 41
 - Google withdrew 3 machine-specific recommendations from its general guide
 
+Robustness checks (peak and latest share in each general guide; robustness.csv):
+
+- main, OpenAI: peak 24% (2024H2), latest 3%, latest below half of peak: yes
+- main, Anthropic: peak 37% (2024H1), latest 9%, latest below half of peak: yes
+- main, Google: peak 29% (2023H2), latest 16%, latest below half of peak: no
+- uncertain_as_accommodation, OpenAI: peak 24% (2024H2), latest 6%, latest below half of peak: yes
+- uncertain_as_accommodation, Anthropic: peak 37% (2024H1), latest 9%, latest below half of peak: yes
+- uncertain_as_accommodation, Google: peak 29% (2023H2), latest 23%, latest below half of peak: no
+- per_page, OpenAI: peak 26% (2024H2), latest 3%, latest below half of peak: yes
+- per_page, Anthropic: peak 37% (2024H1), latest 9%, latest below half of peak: yes
+- per_page, Google: peak 29% (2023H2), latest 16%, latest below half of peak: no
+- without OpenAI 2024H2 copy, OpenAI: peak 11% (2022H2), latest 3%, latest below half of peak: yes
+- without OpenAI 2024H2 copy, Anthropic: peak 37% (2024H1), latest 9%, latest below half of peak: yes
+- without OpenAI 2024H2 copy, Google: peak 29% (2023H2), latest 16%, latest below half of peak: no
+
 Forms in the general guides, 2026H2 (thinking / emphasis / persona):
 
 - OpenAI: 1 / 0 / 0

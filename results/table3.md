@@ -10,4 +10,4 @@
 | Anthropic | 2026H1–2026H2 | "Think of Claude as a brilliant but new employee who lacks context on your norms and workflows." |
 | Google | — | No such description found |
 
-*Note.* Sentences containing colleague, coworker, employee, new hire, intern, or teammate, extracted by script from all sampled documents (current and retired versions), excluding example dialogues and code blocks (text addressed to the model). Sentences in which a colleague is a real person or a test reader of the prompt are omitted. Periods are half-years in which the sentence appears.
+*Note.* Sentences that compare the model to a person, found by keyword search in all sampled documents (current and retired versions), excluding example dialogues and code blocks (text addressed to the model). Sentences in which a colleague is a real person or a test reader of the prompt are omitted. Periods are half-years in which the sentence appears.

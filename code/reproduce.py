@@ -308,7 +308,7 @@ def table3() -> None:
     md = ["**Table 3.** How the guides describe the model as a person.\n", "| Vendor | Period | Wording in the guide |", "|---|---|---|"]
     md += [f"| {n} | {a}{'–' + b if b != a else ''} | \"{s}\" |" for *_, n, a, b, s in out]
     md += [f"| {NAMES[v]} | — | No such description found |" for v in VENDORS if NAMES[v] not in {o[3] for o in out}]
-    md += ["", "*Note.* Sentences containing colleague, coworker, employee, new hire, intern, or teammate, extracted by script from all "
+    md += ["", "*Note.* Sentences that compare the model to a person, found by keyword search in all "
                "sampled documents (current and retired versions), excluding example dialogues and code blocks (text addressed to "
                "the model). Sentences in which a colleague is a real person or a test reader of the prompt are omitted. Periods are "
                "half-years in which the sentence appears."]

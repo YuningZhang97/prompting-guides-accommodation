@@ -157,6 +157,21 @@ def write_csv(name: str, rows: list[dict]) -> None:
         w.writerows(rows)
 
 
+
+def use_paper_font(plt) -> None:
+    """Set the figure in the paper's text face (Linux Libertine) when TeX Live is installed; otherwise keep matplotlib's default."""
+    import subprocess
+    from matplotlib import font_manager
+    try:
+        paths = subprocess.run(["kpsewhich", "LinLibertine_R.otf", "LinLibertine_RI.otf", "LinLibertine_RB.otf"],
+                               capture_output=True, text=True, timeout=20).stdout.split()
+    except (OSError, subprocess.SubprocessError):
+        paths = []
+    for p in paths:
+        font_manager.fontManager.addfont(p)
+    if paths:
+        plt.rcParams["font.family"] = font_manager.FontProperties(fname=paths[0]).get_name()
+
 def shares_and_figure(t: dict) -> None:
     rows = []
     for v in VENDORS:
@@ -173,8 +188,10 @@ def shares_and_figure(t: dict) -> None:
     import matplotlib.pyplot as plt
     colors, markers = {"OA": "#2a78d6", "AN": "#eb6834", "GG": "#1baf7a"}, {"OA": "o", "AN": "s", "GG": "^"}
     tl = {r["vendor"]: r for r in read("reasoning_models.csv")}
-    plt.rcParams.update({"font.size": 10, "axes.spines.top": False, "axes.spines.right": False})
-    fig, ax = plt.subplots(figsize=(7.2, 4.0), dpi=200)
+    # drawn at its printed size (6.5 in = text width) so the 11-pt labels match the table text in the paper
+    plt.rcParams.update({"font.size": 11, "axes.spines.top": False, "axes.spines.right": False})
+    use_paper_font(plt)
+    fig, ax = plt.subplots(figsize=(6.5, 3.0), dpi=200)
     for v in VENDORS:
         pts = [(i, share(t[(v, "general", p)])) for i, p in enumerate(PERIODS) if (v, "general", p) in HAS_DATA]
         segs, cur = [], []
@@ -196,13 +213,13 @@ def shares_and_figure(t: dict) -> None:
         ax.axvline(x, color=colors[v], lw=1, ls=":")
     ax.set_xticks(range(len(PERIODS)), PERIODS)
     ax.set_ylim(0, 42)
-    ax.set_ylabel("Machine-specific accommodation (%)")
+    ax.set_ylabel("Machine-specific\naccommodation (%)")
     ax.grid(axis="y", color="#e5e5e5", lw=0.8)
     ax.legend([plt.Line2D([], [], color=colors[v], marker=markers[v], lw=2) for v in VENDORS]
               + [plt.Line2D([], [], ls="none", marker="o", mfc="white", mec=colors["OA"], mew=2),
                  plt.Line2D([], [], color="#777777", ls=":", lw=1)],
               [NAMES[v] for v in VENDORS] + ["OpenAI 2024H2 (repository copy)", "first reasoning model"],
-              frameon=False, fontsize=8, loc="upper center", bbox_to_anchor=(0.5, -0.1), ncol=3)
+              frameon=False, loc="upper center", bbox_to_anchor=(0.5, -0.12), ncol=3, columnspacing=1.2, handlelength=1.6)
     fig.tight_layout()
     for ext in ("png", "pdf"):
         fig.savefig(OUT / f"figure1.{ext}")
@@ -215,7 +232,8 @@ def table1() -> list[str]:
     def add(name, pairs, unit):
         lo, hi = boot_ci(pairs)
         agree = sum(a == b for a, b in pairs) / len(pairs)
-        rows.append(f"| {name} | {unit} | {len(pairs)} | {alpha(pairs):.3f} | [{lo:.3f}, {hi:.3f}] | {agree:.1%} |")
+        z = lambda x: f"{x:.3f}"[1:] if 0 <= x < 1 else f"{x:.3f}"          # APA: no leading zero for values that cannot exceed 1
+        rows.append(f"| {name} | {unit} | {len(pairs)} | {z(alpha(pairs))} | [{z(lo)}, {z(hi)}] | {agree:.1%} |")
         return alpha(pairs), lo, hi, len(pairs)
 
     s1 = {r["block_id"]: r["decision"] for r in read("segmentation_coder1.csv")}
